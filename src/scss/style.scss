@@ -1,5 +1,6 @@
-$Blue: #4be2e3;
-$DarkBlue: #28e2ce;
+$Blue: #5951ad;
+$DarkBlue: #38326f;
+$Purple: rgb(85, 0, 130);
 $White: white;
 
 * {
@@ -34,16 +35,50 @@ body {
     padding: 15px 15px;
 }
 
+.app {
+    .input {
+        border-radius: 15px;
+        font-weight: 600;
+        padding: 10px 15px;
+        border: none;
+        outline: none;
+        transition: all 300ms ease;
+
+        &:focus {
+            background: $DarkBlue;
+            color: $White;
+        }
+    }
+}
+
 .weather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
     .weather__info {
+        border: 3px solid $Purple;
+        border-radius: 28px;
+        padding: 1rem;
+
         text-align: center;
         color: $White;
+
+        .weather__h1 {
+            font-size: 46px;
+        }
+
         .weather__c {
             font-size: 4em;
         }
         .weather__options {
-            display: flex;
-            justify-content: center;
+            border: 3px solid $DarkBlue;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(2, 120px);
+            grid-template-rows: repeat(auto-fill, 50px);
+            padding: 0.5rem;
         }
     }
 }
